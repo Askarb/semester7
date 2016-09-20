@@ -43,7 +43,8 @@ def getProfile():
 
 @before.each_example
 def before_each_example(scenario, outline, steps):
-    call_command('restore_db', interactive=False, verbosity=0)
+    pass
+    # call_command('restore_db', interactive=False, verbosity=0)
 
 
 
