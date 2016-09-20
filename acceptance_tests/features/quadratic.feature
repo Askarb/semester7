@@ -41,3 +41,33 @@ Feature: test for quadratic
     And i enter into "c" field a "0"
     When click button submit
     Then i see 2 answer "7" and "0" text
+
+  Scenario: i try enter character
+    Given i open "quadratic" page
+    And i enter into "a" field a "qwe"
+    And i enter into "b" field a "asd"
+    And i enter into "c" field a "zxc"
+    When click button submit
+    Then i see "Please enter a valid number." error message in "a" field
+    And i see "Please enter a valid number." error message in "b" field
+    And i see "Please enter a valid number." error message in "c" field
+
+  Scenario: i try enter greater more 100000
+    Given i open "quadratic" page
+    And i enter into "a" field a "100001"
+    And i enter into "b" field a "100002"
+    And i enter into "c" field a "100003"
+    When click button submit
+    Then i see "Please enter a value between -100000 and 100000." error message in "a" field
+    And i see "Please enter a value between -100000 and 100000." error message in "b" field
+    And i see "Please enter a value between -100000 and 100000." error message in "c" field
+
+  Scenario: i try enter greater less -100000
+    Given i open "quadratic" page
+    And i enter into "a" field a "-100001"
+    And i enter into "b" field a "-100002"
+    And i enter into "c" field a "-100003"
+    When click button submit
+    Then i see "Please enter a value between -100000 and 100000." error message in "a" field
+    And i see "Please enter a value between -100000 and 100000." error message in "b" field
+    And i see "Please enter a value between -100000 and 100000." error message in "c" field

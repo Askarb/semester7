@@ -27,5 +27,11 @@ def check_2_answer(text, text2):
     world.browser.find_element_by_xpath(xpath2)
 
 
+def check_error_message(field, text):
+    xpath = '//label[@id="id_%s-error"][text()="%s"]' % (field, text)
+    world.browser.find_element_by_xpath(xpath)
+
+
+
 
 

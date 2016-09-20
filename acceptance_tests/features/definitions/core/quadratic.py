@@ -40,3 +40,10 @@ def i_see_1_answer(step, text, text2):
     # time.sleep(5)
 
 
+@step(r'i see "([^"]*)" error message in "([^"]*)" field')
+def i_see_1_answer(step, text, field):
+    quadratic_page.check_error_message(field, text)
+    # time.sleep(5)
+
+
+
