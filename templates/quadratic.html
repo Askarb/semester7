@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block quadratic %}
+    <div class="quadratic" >
+        <h2>form</h2>
+        <form action="" method="Post">
+            <p>
+                {{ form }}
+            </p>
+            <p>
+                {% if result == 1 %}
+                    <span>{{ a }}x<sup>2</sup> + {{ b }}x + {{ c }} = 0</span>
+                    {% if status == 1 %}
+                        <span id="result">x: {{ x }}</span>
+                    {% elif status == 2  %}
+                        <span id="result">
+                            <i>x1: {{ x1 }}</i>
+                            <i>x2: {{ x2 }}</i>
+                        </span>
+                    {% else %}
+                        <span id="result">Решений нет!!!</span>
+                    {% endif %}
+                {% elif result == 2 %}
+                    <span>{{ a }}x<sup>2</sup> + {{ b }}x + {{ c }} = 0</span>
+                    <span>{{ comment }}</span>
+                {% else %}
+                    <span>ax<sup>2</sup> + bx + c = 0</span>
+                {% endif %}
+            </p>
+            <input type="submit">
+        </form>
+    </div>
+{% endblock %}
