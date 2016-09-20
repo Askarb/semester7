@@ -2,9 +2,18 @@
 {% block quadratic %}
     <div class="quadratic" >
         <h2>form</h2>
-        <form action="" method="Post">
+        <form action="" method="Post" id="quadratic_form">
             <p>
-                {{ form }}
+                <i>Field: {{ form.a.label }}</i>
+                {{ form.a }}
+            </p>
+            <p>
+                <i>Field: {{ form.b.label }}</i>
+                {{ form.b }}
+            </p>
+            <p>
+                <i>Field: {{ form.c.label }}</i>
+                {{ form.c }}
             </p>
             <p>
                 {% if result == 1 %}
@@ -29,4 +38,33 @@
             <input type="submit">
         </form>
     </div>
+    <script>
+        $(document).ready(function(){
+            $("#quadratic_form").validate({
+               rules:{
+                    a:{
+                        required: true,
+                        number: true,
+                        range: [-100000, 100000],
+                        max: 100000,
+                        min: -100000,
+                    },
+                    b:{
+                        required: true,
+                        number: true,
+                        range: [-100000, 100000],
+                        max: 100000,
+                        min: -100000,
+                    },
+                    c:{
+                        required: true,
+                        number: true,
+                        range: [-100000, 100000],
+                        max: 100000,
+                        min: -100000,
+                    },
+               },
+            });
+        });
+    </script>
 {% endblock %}

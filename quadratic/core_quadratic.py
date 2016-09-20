@@ -8,15 +8,22 @@ def solve_quadratic(a, b, c):
     d = b*b - 4*a*c
     if d == 0:
         x = -b / 2 * a
-        res['x'] = x
+        res['x'] = check_int(x)
         res['status'] = 1
-    elif d>0:
+    elif d > 0:
         x1 = (-b + sqrt(d)) / (2 * a)
         x2 = (-b - sqrt(d)) / (2 * a)
-        res['x1'] = x1
-        res['x2'] = x2
+        res['x1'] = check_int(x1)
+        res['x2'] = check_int(x2)
         res['status'] = 2
     return res
+
+
+def check_int(x):
+    if x == int(x):
+        return int(x)
+    else:
+        return x
 
 print(solve_quadratic(1.0, -4.0, 4.0))
 
