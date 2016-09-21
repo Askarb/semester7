@@ -71,3 +71,23 @@ Feature: test for quadratic
     Then i see "Please enter a value between -100000 and 100000." error message in "a" field
     And i see "Please enter a value between -100000 and 100000." error message in "b" field
     And i see "Please enter a value between -100000 and 100000." error message in "c" field
+
+  Scenario: i try type number with 2 point
+    Given i open "quadratic" page
+    And i enter into "a" field a "100..2"
+    And i enter into "b" field a "1.0.2"
+    And i enter into "c" field a "100.."
+    When click button submit
+    Then i see "Please enter a valid number." error message in "a" field
+    And i see "Please enter a valid number." error message in "b" field
+    And i see "Please enter a valid number." error message in "c" field
+
+  Scenario: i try type number with 2 dash
+    Given i open "quadratic" page
+    And i enter into "a" field a "--1002"
+    And i enter into "b" field a "1-0-2"
+    And i enter into "c" field a "100-"
+    When click button submit
+    Then i see "Please enter a valid number." error message in "a" field
+    And i see "Please enter a valid number." error message in "b" field
+    And i see "Please enter a valid number." error message in "c" field
