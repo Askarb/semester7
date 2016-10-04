@@ -1,7 +1,0 @@
-Django==1.8.6
-unittest2==1.1.0
-
-django-jenkins==0.18.1
-selenium==2.53.2
-aloe==0.0.35
-aloe-django==0.0.17

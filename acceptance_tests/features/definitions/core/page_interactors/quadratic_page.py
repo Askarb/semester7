@@ -1,5 +1,6 @@
 from aloe import world
-from acceptance_tests.features.definitions.core.common_actions import enter_text_info_text_field, user_clicks_button
+from acceptance_tests.features.definitions.core.common_actions import \
+    enter_text_info_text_field, user_clicks_button
 
 
 def user_type_number(text, field_name):
