@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block books %}
+    <h2>Selling books!!!</h2>
+    <table class="list">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Count</th>
+            <th>Buy</th>
+        </tr>
+        {% for book in books %}
+            <tr>
+                <td>{{ book.name }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.count }}</td>
+                <td><a href="buy/{{ book.id }}">Buy now</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

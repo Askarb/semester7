@@ -30,6 +30,7 @@ INSTALLED_APPS = (
     'aloe_django',
     'django_nose',
     'acceptance_tests',
+    'book',
 )
 
 MIDDLEWARE_CLASSES = (

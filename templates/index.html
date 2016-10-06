@@ -12,13 +12,17 @@
 <body>
     <div class="container">
         <header>
-        <ul class="menu">
-            <li><a href="/">Root</a></li>
-            <li><a href="/quadratic/">Quadratic</a></li>
-        </ul>
-    </header>
-    <h1>Bolotbekov</h1>
-        {% block quadratic %}{% endblock %}
-    </div>
+            <ul class="menu">
+                <li><a href="/">Root</a></li>
+                <li><a href="/quadratic/">Quadratic</a></li>
+                <li><a href="/books/">Books</a></li>
+                <li><a href="/admin/">Admin</a></li>
+            </ul>
+        </header>
+        <h1>Bolotbekov</h1>
+            {% block quadratic %}{% endblock %}
+            {% block books %} {% endblock %}
+            {% block checkout %}{% endblock %}
+        </div>
 </body>
 </html>

@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block checkout %}
+    <h2>Checkout form</h2>
+    <form action="" method="post">
+        <div><span>Enter your name: {{ form.name }}</span></div>
+        <div><span>Enter your address: {{ form.address }}</span></div>
+        <input type="submit">
+    </form>
+{% endblock %}
