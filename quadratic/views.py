@@ -18,17 +18,11 @@ def index(request):
             a = form.cleaned_data['a']
             b = form.cleaned_data['b']
             c = form.cleaned_data['c']
-            max = 100000
-            min = -100000
-            if min <= a and a <= max and min <= b and b <= max and min <= c and c <= max:
-                context['a'] = a
-                context['b'] = b
-                context['c'] = c
-                context['result'] = 1
-                context.update(solve_quadratic(a, b, c))
-            else:
-                context['result'] = 2
-                context['comment'] = 'Please enter a value between -100000 and 100000.'
+            context['a'] = a
+            context['b'] = b
+            context['c'] = c
+            context['result'] = 1
+            context.update(solve_quadratic(a, b, c))
         else:
             context['result'] = 2
             context['comment'] = 'Enter only real or integer!!!'
