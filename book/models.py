@@ -13,6 +13,7 @@ class Books(models.Model):
 class Customer(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
-    book_id = models.IntegerField()
+    book_id = models.ForeignKey(Books)
     date = models.DateField()
+
 

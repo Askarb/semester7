@@ -24,9 +24,9 @@ def checkout(request, id):
             name = form.cleaned_data['name']
             address = form.cleaned_data['address']
             import datetime
-            new_customer = Customer.objects.create(name=name, address=address, book_id=id, date=datetime.datetime.now())
-            new_customer.save()
             book = Books.objects.get(id=id)
+            new_customer = Customer.objects.create(name=name, address=address, book_id=book, date=datetime.datetime.now())
+            new_customer.save()
             book.count = book.count - 1;
             book.save()
             return redirect('/books/')

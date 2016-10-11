@@ -9,7 +9,7 @@ class BookAdmin(admin.ModelAdmin):
 
 class CustomerAdmin(admin.ModelAdmin):
     list = ('name')
-    list_display = ('name', 'address')
+    list_display = ('name', 'address', 'book_id')
     pass
 
 admin.site.register(Books, BookAdmin)
