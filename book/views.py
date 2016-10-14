@@ -18,6 +18,7 @@ def checkout(request, id):
     context = {
         'form': CustomerForm,
     }
+    template = loader.get_template("checkout.html")
     if request.method == 'POST':
         form = CustomerForm(request.POST)
         if form.is_valid():
@@ -29,6 +30,6 @@ def checkout(request, id):
             new_customer.save()
             book.count = book.count - 1;
             book.save()
-            return redirect('/books/')
-    template = loader.get_template("checkout.html")
+            template = loader.get_template("thanks.html")
+
     return HttpResponse(template.render(context, request))
