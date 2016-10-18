@@ -2,7 +2,7 @@
 Feature: test for quadratic
   # Enter feature description here
 
-  Scenario: i should not possible text
+  Scenario: i should see not possible text
     Given i open "quadratic" page
     And i enter into "a" field a "5"
     And i enter into "b" field a "2"

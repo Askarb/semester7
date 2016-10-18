@@ -26,7 +26,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web_application',
-    'book'
+    'book',
+    'fibonacci',
 )
 
 MIDDLEWARE_CLASSES = (

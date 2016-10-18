@@ -20,3 +20,8 @@ table tr th{
     width: 200px;
 }
 
+
+
+p.result{
+    word-break: break-all;
+}
