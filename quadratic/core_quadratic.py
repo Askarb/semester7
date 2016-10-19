@@ -25,7 +25,7 @@ def check_int(x):
     else:
         return x
 
-print(solve_quadratic(1.0, -4.0, 4.0))
+# print(solve_quadratic(1.0, -4.0, 4.0))
 
 # a  b   c   x1   x2
 # 5  6   1 -0.2   -1

@@ -10,7 +10,23 @@ Feature: test for quadratic
     When click button submit
     Then i see "Решений нет!!!" text
 
+  Scenario: i should see not possible text(2)
+    Given i open "quadratic" page
+    And i enter into "a" field a "1"
+    And i enter into "b" field a "1"
+    And i enter into "c" field a "2"
+    When click button submit
+    Then i see "Решений нет!!!" text
+
   Scenario: i should see 1 answer
+    Given i open "quadratic" page
+    And i enter into "a" field a "1"
+    And i enter into "b" field a "-6"
+    And i enter into "c" field a "9"
+    When click button submit
+    Then i see 1 answer "3" text
+
+  Scenario: i should see 1 answer(2)
     Given i open "quadratic" page
     And i enter into "a" field a "1"
     And i enter into "b" field a "-4"
