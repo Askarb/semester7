@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% block book_view %}
+    <div class="book">
+        <h2>Book view</h2>
+        <div> Name: <i>{{ book.name }}</i></div>
+        <div> Author: <i>{{ book.author }}</i></div>
+        <div> pRICE: <i>{{ book.price }}</i></div>
+        <div> Count: <i>{{ book.count }}</i></div>
+        <div><a href="books/buy/{{ book.id }}">buy now</a></div>
+    </div>
+{% endblock %}

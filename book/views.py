@@ -1,5 +1,6 @@
+from django.http import Http404
 from django.http import HttpResponse
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render_to_response, render
 
 from book.models import Books, Customer
 from django.template import loader
@@ -11,6 +12,9 @@ def index(request):
         'books': Books.objects.all(),
     }
     template = loader.get_template("book_index.html")
+    response = HttpResponse('blah')
+    #response.set_cookie("name", "value")
+    #return render_to_response("asd", response)
     return HttpResponse(template.render(context, request))
 
 
@@ -18,6 +22,7 @@ def checkout(request, id):
     context = {
         'form': CustomerForm,
     }
+    template = loader.get_template("checkout.html")
     if request.method == 'POST':
         form = CustomerForm(request.POST)
         if form.is_valid():
@@ -29,6 +34,24 @@ def checkout(request, id):
             new_customer.save()
             book.count = book.count - 1;
             book.save()
-            return redirect('/books/')
-    template = loader.get_template("checkout.html")
+            template = loader.get_template("thanks.html")
+
     return HttpResponse(template.render(context, request))
+
+
+def viewbook(request, id):
+    context={
+        'status': 0,
+    }
+    template = loader.get_template("book_view.html")
+    try:
+        context['book'] = Books.objects.get(id=id)
+        return HttpResponse(template.render(context, request))
+    except Books.DoesNotExist:
+        raise Http404("Object with such ID doesn't exist!!!")
+
+
+def myredirect(request):
+    return redirect("/books/")
+
+
