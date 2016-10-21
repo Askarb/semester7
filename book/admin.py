@@ -4,7 +4,7 @@ from book.models import Books, Customer
 
 class BookAdmin(admin.ModelAdmin):
     list = ('name')
-    list_display = ('name', 'price', 'count')
+    list_display = ('name','author', 'price', 'count')
 
 
 class CustomerAdmin(admin.ModelAdmin):

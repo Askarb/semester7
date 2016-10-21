@@ -6,13 +6,15 @@
     <table class="list">
         <tr>
             <th>Name</th>
+            <th>Author</th>
             <th>Price</th>
             <th>Count</th>
             <th>Buy</th>
         </tr>
         {% for book in books %}
             <tr>
-                <td>{{ book.name }}</td>
+                <td><a href="view/{{ book.id }}">{{ book.name }}</a></td>
+                <td>{{ book.author }}</td>
                 <td>{{ book.price }}</td>
                 <td>{{ book.count }}</td>
                 <td><a href="buy/{{ book.id }}">Buy now</a></td>
