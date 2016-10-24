@@ -8,13 +8,16 @@ from book.forms import CustomerForm
 
 
 def index(request):
+    context = {}
+    template = loader.get_template("visual_index.html")
+    return HttpResponse(template.render(context, request))
+
+
+def index_book(request):
     context = {
         'books': Books.objects.all(),
     }
     template = loader.get_template("book_index.html")
-    response = HttpResponse('blah')
-    #response.set_cookie("name", "value")
-    #return render_to_response("asd", response)
     return HttpResponse(template.render(context, request))
 
 
@@ -52,6 +55,6 @@ def viewbook(request, id):
 
 
 def myredirect(request):
-    return redirect("/books/")
+    return redirect("/")
 
 

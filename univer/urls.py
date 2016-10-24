@@ -8,6 +8,6 @@ import book.urls
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^quadratic', include(quadratic.urls)),
-    url(r'^books', include(book.urls)),
+    url(r'^visual', include(book.urls)),
     url(r'^$', include(web_application.urls)),
 ]

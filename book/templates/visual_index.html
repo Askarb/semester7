@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block visual_index %}
+<h2>Visual projecting</h2>
+    <div class="books-block">
+        <ul class="menu">
+            <li><a href="book/">Books</a></li>
+        </ul>
+        {% block books %}{% endblock %}
+        {% block checkout %}{% endblock %}
+        {% block thanks %}{% endblock %}
+        {% block book_view %}{% endblock %}
+    </div>
+
+{% endblock %}

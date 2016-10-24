@@ -1,5 +1,4 @@
-{% extends "index.html" %}
-
+{% extends "visual_index.html" %}
 {% block books %}
     <h2>Selling books!!!</h2>
     <h5><a href="/admin/book/customer/">List of customers</a></h5>
@@ -17,7 +16,7 @@
                 <td>{{ book.author }}</td>
                 <td>{{ book.price }}</td>
                 <td>{{ book.count }}</td>
-                <td><a href="buy/{{ book.id }}">Buy now</a></td>
+                <td><a href="{{ book.id }}">Buy now</a></td>
             </tr>
         {% endfor %}
     </table>
