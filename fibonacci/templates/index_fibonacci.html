@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% block fibonacci %}
+    <h2>Hello it is Fibonacci page</h2>
+    <form action="" method="post">
+        <div><span>Enter positive integer: {{ form.a }}</span></div>
+        {% if status == 1 %}
+            <p class="result">{{ a }}й число фибоначчи = <i>{{ result }}</i></p>
+        {% elif status == 2 %}
+            <p class="error">{{ comment }}</p>
+        {% endif %}
+        <input type="submit">
+    </form>
+{% endblock %}
