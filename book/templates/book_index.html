@@ -16,9 +16,8 @@
                 <td>{{ book.author }}</td>
                 <td>{{ book.price }}</td>
                 <td>{{ book.count }}</td>
-                <td><a href="{{ book.id }}">Buy now</a></td>
+                <td><a href="buy/{{ book.id }}">Buy now</a></td>
             </tr>
         {% endfor %}
     </table>
-
 {% endblock %}
