@@ -2,13 +2,20 @@
 {% block visual_index %}
 <h2>Visual projecting</h2>
     <div class="books-block">
-        <ul class="menu">
-            <li><a href="book/">Books</a></li>
+        <ul class="vertical medium-horizontal menu">
+            <li><a href="/visual/book/">Books</a></li>
+            <li><a href="/visual/football/">Football</a></li>
+            <li><a href="/visual/phone/">Phone</a></li>
+            <li><a href="/visual/login/">login</a></li>
         </ul>
+
         {% block books %}{% endblock %}
         {% block checkout %}{% endblock %}
         {% block thanks %}{% endblock %}
         {% block book_view %}{% endblock %}
+        {% block football %}{% endblock %}
+        {% block phone %}{% endblock %}
+        {% block login %}{% endblock %}
     </div>
 
 {% endblock %}

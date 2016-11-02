@@ -1,0 +1,41 @@
+{% extends "visual_index.html" %}
+{% block phone %}
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Manufacturer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in phone %}
+                <tr>
+                    <td>{{ i.model|upper }}</td>
+                    <td>{{ i.company|upper }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <div class="pagination-centered">
+        <ul class="pagination">
+            {% if phone.has_previous %}
+                <li class="arrow unavailable"><a href="?page={{ phone.previous_page_number }}">&laquo;</a></li>
+            {% endif %}
+            {% for j in before %}
+                <li><a href="?page={{ j }}">{{ j }}</a></li>
+            {% endfor %}
+            <li class="current">
+                <a href="?page={{ phone.number }}">{{ phone.number }}</a>
+            </li>
+            {% for j in after %}
+                <li><a href="?page={{ j }}">{{ j }}</a></li>
+            {% endfor %}
+
+            {% if phone.has_next %}
+                <li class="arrow"><a href="?page={{ phone.next_page_number }}">&raquo;</a></li>
+            {% endif %}
+        </ul>
+    </div>
+{% endblock %}

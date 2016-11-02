@@ -92,3 +92,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'bolotbekov06@gmail.com'
+EMAIL_HOST_PASSWORD = '***'
+DEFAULT_FROM_EMAIL = 'bolotbekov06@gmail.com'
+DEFAULT_TO_EMAIL = 'asrock-9@mail.ru'
