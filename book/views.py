@@ -37,25 +37,25 @@ def login_index(request):
     template = loader.get_template("login.html")
 
 
-    print("Sending Email")
+    # print("Sending Email")
     # mail_title = 'Test Email'
     # message = 'This is a test email.'
     # email = settings.DEFAULT_FROM_EMAIL
     # recipients = [settings.DEFAULT_TO_EMAIL]
-    # send_mail('Subject here', 'Hi nooruz, Django mail SMTP server', settings.EMAIL_HOST_USER,['nokew_kg@mail.ru'], fail_silently=False)
-
-    from twilio.rest import TwilioRestClient
-    # put your own credentials here
-    ACCOUNT_SID = 'AC321facd931a6cd4f8652bd5d4c1b30ec'
-    AUTH_TOKEN = '27ad68c3ca34a8aa5ffcfa8cef44c959'
-
-    client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
-
-    client.messages.create(
-        to='+996705046030',
-        from_='+12016901725',
-        body='Hello Tat\'yna Nikolaevna!!!'
-    )
+    # send_mail('Subject here', 'Hi nooruz, Django mail SMTP server', settings.EMAIL_HOST_USER, ['oskar95.kg@mail.ru'], fail_silently=False)
+    #
+    # from twilio.rest import TwilioRestClient
+    # # put your own credentials here
+    # ACCOUNT_SID = 'AC321facd931a6cd4f8652bd5d4c1b30ec'
+    # AUTH_TOKEN = '27ad68c3ca34a8aa5ffcfa8cef44c959'
+    #
+    # client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
+    #
+    # client.messages.create(
+    #     to='+996700401014',
+    #     from_='+12016901725',
+    #     body='Kanday????????????????????????????????????????????????????????????!!!'
+    # )
 
     return HttpResponse(template.render(context, request))
 
