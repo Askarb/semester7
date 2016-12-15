@@ -1,0 +1,33 @@
+---
+execution:
+- concurrency: 8000
+  throughput: 500
+  ramp-up: 5s
+  hold-for: 1m
+  steps: 1
+  scenario: blazemeter-recording
+
+scenarios:
+  blazemeter-recording:
+    timeout: 5s
+    retrieve-resources: false
+    store-cache: false
+    store-cookie: false
+    default-address: http://127.0.0.1:8080
+    headers:
+      User-Agent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36'
+      Accept-Language: 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+      Accept-Encoding: 'gzip, deflate, sdch'
+      Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp'
+    requests:
+    - /
+    - url: '/quadratic'
+      method: POST
+      headers:
+        Content-Type: application/x-www-form-urlencoded
+      body:
+        a: 1
+        b: 2
+        c: -3
+    - /
+    - /
