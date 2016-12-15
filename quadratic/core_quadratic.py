@@ -5,7 +5,7 @@ def solve_quadratic(a, b, c):
     res = {
         'status': 0
     }
-    d = discriminant(a, b, c)
+    d = discriminnant(a, b, c)
     if d == 0:
         x = -b / 2 * a
         res['x'] = check_int(x)
@@ -19,7 +19,7 @@ def solve_quadratic(a, b, c):
     return res
 
 
-def discriminant(a, b, c):
+def discriminnant(a, b, c):
     return b * b - 4 * a * c
 
 
