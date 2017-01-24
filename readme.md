@@ -3,7 +3,7 @@ git clone git@github.com:Askarb/semester7.git ~/PROJECTS/univer <br\>
 
 
 ###Установка окружения на Linux
-sudo apt-get install python  python3-dev  python3-setuptools  python3-pip  <br\>
+sudo apt-get install python  python3-dev  python3-setuptools  python3-pip <br\>
 sudo pip3 install virtualenv
 
 
